@@ -20,5 +20,5 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi 
-PATH="/opt/android-sdk-linux:/opt/android-sdk-linux:/opt/android-sdk-linux/platform-tools:$PATH"
+PATH="/opt/android-sdk-linux:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:$PATH"
 
