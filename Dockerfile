@@ -32,7 +32,7 @@ RUN echo y | android update sdk --filter android-22,android-21 --no-ui --force -
 RUN echo y | android update sdk --filter platform-tools,extra-android-support --no-ui --force
 # Install Supprting Libraries
 RUN android list sdk --all | grep -i "Android Support \(Library\|Repository\)" | cut -d '-' -f 1 | xargs -I {} sh -c 'echo y | android update sdk -u -a -t {}'
-
+RUN chown jenkins:jenkins -R /opt/android-sdk-linux  
 # Git to pull external repositories of Android app projects
 RUN apt-get install -y --no-install-recommends git
 
