@@ -14,6 +14,9 @@ RUN mkdir -p /var/run/sshd
 # Install Python setup tools
 RUN apt-get install -y --no-install-recommends  python-setuptools
 
+# Install Library for culebra tools
+RUN apt-get install -y --no-install-recommends python-imaging python-imaging-tk
+
 # Main Android SDK
 RUN apt-get install -y --no-install-recommends wget
 RUN cd /opt && wget -q http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz
@@ -36,7 +39,8 @@ RUN android list sdk --all | grep -i "Android Support \(Library\|Repository\)" |
 RUN apt-get install -y --no-install-recommends git
 
 # Add user jenkins to the image
-RUN adduser --quiet jenkins
+RUN adduser --quiet jenkins 
+RUN adduser jenkins sudo
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
 
@@ -57,7 +61,7 @@ RUN git clone   https://github.com/jimlin95/cts_prepare.git /home/jenkins/cts_pr
 RUN chown jenkins:jenkins -R /home/jenkins/cts_prepare
 #RUN sudo -u jenkins git clone git@192.30.252.130:jimlin95/cts_prepare.git /home/jenkins/cts_prepare
 #ENV ANDROID_VIEW_CLIENT_HOME /home/jenkins/cts_prepare/AndroidViewClient
-
+RUN easy_install --upgrade androidviewclient
 RUN chown jenkins:jenkins -R /opt/android-sdk-linux  
 # Cleaning
 RUN apt-get clean 

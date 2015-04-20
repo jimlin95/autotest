@@ -106,3 +106,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 export ANDROID_VIEW_CLIENT_HOME=/home/jenkins/cts_prepare/AndroidViewClient
+declare -x DISPLAY=:0
