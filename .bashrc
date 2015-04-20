@@ -106,3 +106,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 export ANDROID_VIEW_CLIENT_HOME=/home/jenkins/cts_prepare/AndroidViewClient
+declare -x all_proxy="socks://10.241.104.240:5678/"
+declare -x ftp_proxy="ftp://10.241.104.240:5678/"
+declare -x http_proxy="http://10.241.104.240:5678/"
+declare -x https_proxy="https://10.241.104.240:5678/"
+
+declare -x DISPLAY=:0
