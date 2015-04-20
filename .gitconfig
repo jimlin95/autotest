@@ -48,7 +48,7 @@
 [https]
 	proxy = http://10.241.104.240:5678/
 [hooks "slack"]
-	webhook-url = https://hooks.slack.com/services/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
+	webhook-url = https://hooks.slack.com/services/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
 	channel = test
 	username = GIT
 	icon-url = http://dev.bowdenweb.com/a/i/cons/dev/git/icon/git-icon-black/git-icon-black-w128.png
